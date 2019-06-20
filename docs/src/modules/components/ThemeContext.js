@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme, darken } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { blue, pink } from '@material-ui/core/colors';
 import { getCookie } from 'docs/src/modules/utils/helpers';
 import { lightTheme, darkTheme, setPrismTheme } from 'docs/src/modules/components/prism';
+import toastyTheme from '../../../../toasty_theme.json';
 
 export const themeInitialOptions = {
   direction: 'ltr',
-  paletteColors: {
-    primary: {
-      main: blue[500],
-    },
-    secondary: {
-      // Darken so we reach the AA contrast ratio level.
-      main: darken(pink.A400, 0.08),
-    },
-  },
+  paletteColors: toastyTheme.palette,
 };
 
 export const DispatchContext = React.createContext(() => {
